@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <info format="1.0">
+    <title>Git Essentials</title>
+    <author>
+      <name>René Kollmorgen</name>
+      <email>rene.kollmorgen@keemimobile.com</email>
+    </author>
+    <publisher>
+      <name>www.keemimobile.com</name>
+      <website>www.keemimobile.com</website>
+    </publisher>
+    <cover>
+      <media ref="Cover.jpeg" type="image"/>
+    </cover>
+    <description>Git is a distributed version control system which helps to track a product history over time and to collaborate easily with others. This KEEMI catalog is aimed at developers which use Git in their daily work want to have the essentials in mind.</description>
+    <language>english</language>
+    <version>0.5</version>
+  </info>
+  <questionList>
+    <question type="multipleChoice" name="glossaryWorkingTree" topic="glossary">
+      <text>Look at the options below. Which options matches the meaning of a working tree?</text>
+      <answer numberOfVisibleCorrectItems="3" explanation="glossaryWorkingTree">
+        <answerItem correct="yes">
+          <text>a set of files and directories currently being worked on</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>you can work in your working tree without using git at all</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the working tree is normally equal to the HEAD plus any local changes that you have made but not yet committed</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the working tree has your checked out files / source code</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>contains a special top-level directory named ".git"</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>any git command must be executed within the working tree or its subdirectories</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>the working tree contains all the history of your project</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>the working tree is also called staging area or index</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>you add files with: git add nameOfFile to the working tree</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="flashcard" name="glossaryStagingArea" topic="glossary">
+      <text>You want to add a modified tracked file: file1.txt to the staging area. Which commands can you use?</text>
+      <answer explanation="glossaryStagingArea">
+        <answerItem correct="yes">
+          <text>git add file1.txt</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git add -A</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git add -u</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="flashcard" name="glossaryRepositoryObjDbTypes" topic="glossary">
+      <text>Which types of objects can be stored in the object database of a Git repository?</text>
+      <answer explanation="glossaryRepository">
+        <answerItem correct="yes">
+          <text>Blob - the content of a file</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Tree - references Blob's and other Tree's</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Commit - contains e.g. the name of the author and commit date, references a Tree and other Commit's</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Tag - contains the name of a Tag, references a Commit / Commit Object</text>
+        </answerItem>
+      </answer>
+      <resourceList>
+        <resource name="repository"/>
+      </resourceList>
+    </question>
+    <question type="flashcard" name="glossaryCommitObject" topic="glossary">
+      <text>Which informations are stored within a commit object?</text>
+      <answer numberOfVisibleCorrectItems="4" explanation="glossaryCommitObject">
+        <answerItem correct="yes">
+          <text>the parent commit object</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the author</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>a commit message</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the committer</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>author date</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>commit date</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the tree object which corresponds to the top directory of the stored commit</text>
+        </answerItem>
+      </answer>
+      <resourceList>
+        <resource name="commitAuthorDate"/>
+        <resource name="goodCommitMessages"/>
+      </resourceList>
+    </question>
+    <question type="flashcard" name="glossaryCommit" topic="glossary">
+      <text>What is the command sequence to commit changes, made in a file: file1.txt, into the repository?</text>
+      <answer style="row" explanation="glossaryCommit">
+        <answerItem correct="yes">
+          <text>git add file1.txt</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git commit</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="multipleChoice" name="glossaryHead" topic="glossary">
+      <text>Look at the options below. Which options matches the meaning of HEAD?</text>
+      <answer style="row" numberOfVisibleCorrectItems="3" explanation="glossaryHead">
+        <answerItem correct="yes">
+          <text>The HEAD is a reference to the most recent commit on the current branch</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Heads are stored in a file in $GIT_DIR/refs/heads/ directory, except when using packed refs.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>It is possible for HEAD to refer to a specific commit that is not associated with a branch name. This situation is called a detached HEAD</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Is the parent of the next commit</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>The tracked files referred by HEAD define what goes in to the next commit</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>The files referred by HEAD and the files in the working tree are always the same</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>The files referred by HEAD and the files in the staging area are always the same</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="logOutput" type="multipleChoice" topic="basics">
+      <title>git log</title>
+      <text>Select all options which are printed by the command: git log</text>
+      <answer explanation="log">
+        <answerItem correct="yes">
+          <text>the commit-ID</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the name of the author</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the date of the commit</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>the complete commit message</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>a diff of the made changes</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>the name of the committer</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="showCommitedContentOfFile" type="flashcard" topic="basics">
+      <text>You want to print the content of the tracked file: file1.txt from the commit with the shorten ID:93fd9f9802. How do you do that with the command: show ?</text>
+      <answer explanation="log">
+        <answerItem correct="yes">
+          <text>git show 93fd9f9802:file1.txt</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="flashcard" name="configNameAndEmail" topic="basics">
+      <text>You want to configure the user name and e-mail for a specific repository. Finally you want to check the configuration of the repository. Which commands you use?</text>
+      <answer style="row">
+        <answerItem correct="yes">
+          <text>git config user.name 'name surname'</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git config user.email 'email@address.net'</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git config -l</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="singleChoice" name="commitAll" topic="basics">
+      <title>git commit -a</title>
+      <text>What is the result of the command: git commit -a ?</text>
+      <answer style="row">
+        <answerItem correct="yes">
+          <text>all files, changed in the working tree, are staged automatically and committed into the repository</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>all files, added and changed in the working tree, are staged automatically and committed into the repository</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>all files, changed in the staging are, are committed without a commit message</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>all files in the staging area are attached to the last commit made</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="singleChoice" name="diffFileStagingAreaAndRepo" topic="basics">
+      <introduction>
+        <section>
+          <text>You add a new file with the name: file1.txt to the working tree and write the line: line1 at the beginning of the file content. After that you execute the following git commands:</text>
+          <text>git add fil1.txt</text>
+          <text>git commit -m "added a new file"</text>
+        </section>
+        <section>
+          <text>Than you change the first line of the file1.txt from: line1 to line0 and execute the following git command:</text>
+          <text>git add -u</text>
+        </section>
+      </introduction>
+      <title>Read the introduction and answer the question</title>
+      <text>Which command prints the following output?</text>
+      <answer style="row" explanation="diff">
+        <mediaList>
+          <media type="image" ref="gitDiffFile1.png"/>
+        </mediaList>
+        <answerItem correct="yes">
+          <text>git diff --cached --color-words</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>git diff</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>git diff --color-words</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>git status</text>
+        </answerItem>
+      </answer>
+      <resourceList>
+        <resource name="diff"/>
+      </resourceList>
+    </question>
+    <question type="flashcard" name="discardAllLocalChangesFromFile1" topic="basics"
+      groupName="discardAllLocalChangesFromFile">
+      <introduction>
+        <section>
+          <text>Starting point is a clean working tree!</text>
+          <text>You add a new file with the name: file1.txt to the working tree and writes the line: line1 at the beginning of the file content. After that you commit the new added file to the repository using:</text>
+          <text>git add fil1.txt</text>
+          <text>git commit -m "added file1.txt"</text>
+          <text>Than you change the content of the file: file1.txt from line1 to line0 and push the modified file to the staging area with:</text>
+          <text>git add -u</text>
+          <text>At last you change the content again from line0 to lineN.</text>
+        </section>
+      </introduction>
+      <title>Read the introduction and answer the question</title>
+      <text>Which command can be used to discard the last made change?</text>
+      <answer style="row" explanation="undoingThings">
+        <answerItem correct="yes">
+          <text>git checkout -- file1.txt</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="singleChoice" name="discardAllLocalChangesFromFile2" topic="basics"
+      groupName="discardAllLocalChangesFromFile">
+      <text>What is the content of the file: file1.txt now?</text>
+      <answer style="row">
+        <answerItem correct="yes">
+          <text>line0</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>line1</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>lineN</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="flashcard" name="discardAllLocalChangesFromFile3" topic="basics"
+      groupName="discardAllLocalChangesFromFile">
+      <text>You want to discard all made modifications from file1.txt and update the content to the one in the last commit. Which commands you use?</text>
+      <answer style="row">
+        <answerItem correct="yes">
+          <text>git reset HEAD file1.txt</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git checkout -- file1.txt</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question type="singleChoice" name="nothingToCommit" topic="basics">
+      <title>Nothing to Commit</title>
+      <text>If git status says "Nothing to commit", what’s in the staging area?</text>
+      <answer style="row">
+        <answerItem correct="yes">
+          <text>working tree and staging area are synchronized with HEAD, the staging area is not empty and contains the same files as in the working tree</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>working tree and staging area contain different files, the files in the staging area are all comitted into the repository</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>the working tree contains changed files which are not added to the staging area yet</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>the staging area contains no files</text>
+        </answerItem>
+      </answer>
+    </question>
+  </questionList>
+  <explanationList>
+    <explanation name="glossaryWorkingTree" topic="glossary">
+      <title>Working Tree</title>
+      <section>
+        <text>The Git working tree can be described by the following items:</text>
+        <question name="glossaryWorkingTree"/>
+      </section>
+      <section>
+        <title>A clean working tree</title>
+        <text>A working tree is clean, if it corresponds to the revision referenced by the current HEAD.</text>
+      </section>
+    </explanation>
+    <explanation name="glossaryStagingArea" topic="glossary">
+      <title>Staging Area</title>
+      <section>
+        <text>The staging area is a collection of files with status information, whose contents are stored as objects. It is a stored version of your working tree and is a simple file, generally contained in your .git directory.</text><text>The information within the staging area defines what goes into your next commit.</text><text>The staging area is sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area.</text><text>To add new or changed files to the staging area use the commands:</text><question
+          name="glossaryStagingArea"
+          /> can be used.<text>The option -u adds all changed files to the staging area, option -A all changed and new added ones.</text>
+      </section>
+      <section>
+        <title>Tracked files</title>
+        <text>Once a file is added to the staging area, the file path is known to git and is considered as tracked.</text>
+      </section>
+    </explanation>
+    <explanation name="glossaryRepository" topic="glossary">
+      <title>The Repository</title>
+      <section>
+        <text>The purpose of Git is to manage a project, or a set of files, as they change over time. Git stores this information in a data structure called a repository. A git repository contains, among other things, the following:</text>
+        <text>A set of commit objects</text>
+        <text>A set of references to commit objects</text>
+        <text>The Git repository is stored in the same directory as the project itself, in a subdirectory called .git. There is only one .git directory, in the root directory of the project. The repository is stored in files alongside the project. There is no central server repository.</text>
+      </section>
+      <section>
+        <title>The Object Database</title>
+        <text>Git stores commit objects into an object database. Next to commit objects Git handles the following types of objects</text>
+        <question name="glossaryRepositoryObjDbTypes"/>
+        <text>Every stored object is uniquely identified by an ID. The ID is a HASH value generated by the Secure Hash Algorithm 1 and usually represented by the 40 character hexadecimal encoding ( e.g. 2be2c6dbf31582b84d0fa92d88d487c8b9700c28 ).</text>
+      </section>
+      <resourceList>
+        <resource name="repository"/>
+      </resourceList>
+    </explanation>
+    <explanation name="glossaryCommitObject" topic="glossary">
+      <title>Commit Object</title>
+      <section>
+        <text>A commit object contains the information about a particular commit, such as:</text>
+        <question name="glossaryCommitObject"/>
+        <text>The commit-ID is the unique identifier of the stored commit object.</text>
+        <text>A parent is a commit object containing a (possibly empty) list of the logical predecessor(s) in the line of development, i.e. its parents.</text>
+        <text>The author date notes when this commit was originally made (i.e. when you finished the git commit). According to the docs of git commit, the author date could be overridden using the --date switch.</text>
+        <text>The commit date gets changed every time the commit is being modified, for example when rebasing the branch where the commit is in on another branch.</text>
+      </section>
+      <resourceList>
+        <resource name="commitAuthorDate"/>
+        <resource name="goodCommitMessages"/>
+      </resourceList>
+    </explanation>
+    <explanation name="glossaryCommit" topic="glossary">
+      <title>Commit</title>
+      <section>
+        <text>As a noun: A single point in the git history; the entire history of a project is represented as a set of interrelated commits. The word "commit" is often used by git in the same places other revision control systems use the words "revision" or "version". Also used as a short hand for commit object.</text>
+        <text>As a verb: The action of storing a new snapshot of the project’s state in the git history, by creating a new commit representing the current state of the index and advancing HEAD to point at the new commit.</text>
+        <text>To commit changes made at a file: file1.txt in the working tree, the following commands can be executed:</text>
+        <question name="glossaryCommit"/>
+      </section>
+    </explanation>
+    <explanation name="glossaryHead" topic="glossary">
+      <title>Head</title>
+      <section>
+        <text>You can think of the HEAD as the "current branch". When you switch branches with git checkout, the HEAD reference changes to point to the tip of the new branch. It is possible for HEAD to refer to a specific revision that is not associated with a branch name. This situation is called a detached HEAD.</text>
+        <text>The HEAD can be further described as:</text>
+        <question name="glossaryHead"/>
+      </section>
+    </explanation>
+    <explanation name="log" topic="basics">
+      <title>Viewing the commit history</title>
+      <section>
+        <text>With the git log command the version history of a repository can be explored.</text>
+        <text>By default the command prints the following informations about each commit:</text>
+        <question name="logOutput"/>
+        <text>To reduce the number of logged commits to the last five for example, the log command must be executed as follows:</text>
+        <text>git log -5</text>
+        <text>With the option --oneline log prints a shorten commit-ID and the first line of the commit message only.</text>
+      </section>
+      <section>
+        <title>Limiting the number of logs</title>
+        <text>The are several options to limit the output of log to a given range of time. The command:</text>
+        <text>git log --since="3 days ago" -- DbGateways/</text>
+        <text>limits the output to the commits regarding the files within the directory DbGateways/ made the last 3 days ago.</text>
+      </section>
+      <section>
+        <title>Information about objects with show</title>
+        <text>The command show prints information about one or more objects (blobs, trees, tags and commits).</text>
+        <text>To print the contents of a file(blob) named: file1.txt from a specific commit with the shorten ID:93fd9f9802 execute:/</text>
+        <question name="showCommitedContentOfFile"/>
+      </section>
+    </explanation>
+    <explanation name="diff" topic="basics">
+      <title>Git diff</title>
+      <section>
+        <text>The git diff command can be used to show you the difference between the version of a file in the working directory, staging area (index) and most recent commit. The three main types of git diff commands you would likely use are:</text>
+        <text>git diff: Show differences between your working directory and the staging area.</text>
+        <text>git diff –cached: Show differences between the staging area and the most recent commit.</text>
+        <text>git diff HEAD: Show the differences between your working directory and the most recent commit.</text>
+      </section>
+      <resourceList>
+        <resource name="diff"/>
+      </resourceList>
+    </explanation>
+    <explanation name="undoingThings" topic="basics">
+      <title>Unmodifying a Modified File</title>
+      <section>
+        <text>At any stage, you may want to undo something. To overwrite the modified content of a file in the working tree with the content stored in the staging area use:</text><text>git checkout -- nameOfFile</text><text>Be careful, because you can’t revert the modifications.</text><text>To throw away a version of a file stored in the staging area use:</text><text>git reset HEAD nameOfFile</text><text>This command replaces the content of the file (Blob) to the last committed one referred by HEAD.</text>
+      </section>
+    </explanation>
+  </explanationList>
+  <resourceList>
+    <resource name="glossary" type="website">
+      <title>Git Glossary</title>
+      <link>https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html</link>
+    </resource>
+    <resource name="repository" type="website">
+      <title>The Git repository</title>
+      <link>http://www.sbf5.com/~cduan/technical/git/git-1.shtml</link>
+    </resource>
+    <resource name="commitAuthorDate" type="website">
+      <title>Why git AuthorDate is different from CommitDate?</title>
+      <link>http://stackoverflow.com/questions/11856983/why-git-authordate-is-different-from-commitdate</link>
+    </resource>
+    <resource name="goodCommitMessages" type="website">
+      <title>A note about Git commit messages</title>
+      <link>http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html</link>
+    </resource>
+    <resource name="diff" type="website">
+      <title>Git diff explained</title>
+      <link>http://www.gitguys.com/topics/git-diff/</link>
+    </resource>
+  </resourceList>
+  <topicList>
+    <topic name="glossary">
+      <title>Glossary</title>
+    </topic>
+    <topic name="basics">
+      <title>Basics</title>
+    </topic>
+  </topicList>
+</catalog>
