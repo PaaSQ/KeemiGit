@@ -306,13 +306,49 @@
           <text>working tree and staging area are synchronized with HEAD, the staging area is not empty and contains the same files as in the working tree</text>
         </answerItem>
         <answerItem correct="no">
-          <text>working tree and staging area contain different files, the files in the staging area are all comitted into the repository</text>
+          <text>working tree and staging area contain different files, the files in the staging area are all committed into the repository</text>
         </answerItem>
         <answerItem correct="no">
           <text>the working tree contains changed files which are not added to the staging area yet</text>
         </answerItem>
         <answerItem correct="no">
           <text>the staging area contains no files</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="improvingCommit" type="flashcard" topic="basics">
+      <text>You forgot to add a file: file2.txt to the last commit. Which command can you use to amend the last commit?</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>git commit --amend</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="revertADeletedModifiedFile" type="singleChoice" topic="basics">
+      <introduction>
+        <section>
+          <text>Starting point is a clean working tree!</text>
+          <text>You make some modifications to the content of a tracked file: file1.txt. Than you accidentally remove file1.txt using the command:</text><text>git rm file1.txt</text>
+        </section>
+      </introduction>
+      <text>Can you restore the file with the modifications you made?</text>
+      <answer>
+        <answerItem correct="no">
+          <text>Yes</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>No</text>
+        </answerItem>
+      </answer>
+    </question>
+    <question name="restoringADeletedFile" type="flashcard" topic="basics">
+      <text>You deleted a file: file1.txt in a previous commit. Now you want to restore the deleted file: file1.txt. What can you do?</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>You have to find the commit that deleted the file. You can do that with the command: git log --diff-filter=D --summary  This command shows you all commits which comprise deletions of files.</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>If you found the commit which deletes the file, take the commit-ID and use the following command: git checkout c20072c6^ -- file1.txt  This command restores the file: file1.txt from the commit before the one with the short ID:c20072c6</text>
         </answerItem>
       </answer>
     </question>
