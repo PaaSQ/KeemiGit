@@ -4,7 +4,6 @@
     <title>Git Essentials</title>
     <author>
       <name>René Kollmorgen</name>
-      <email>rene.kollmorgen@keemimobile.com</email>
     </author>
     <publisher>
       <name>www.keemimobile.com</name>
@@ -352,6 +351,48 @@
         </answerItem>
       </answer>
     </question>
+    <question name="visualDiffTrackedFile" type="order" topic="basics">
+      <introduction>
+        <section>
+          <text>Starting point is a clean working tree!</text>
+          <text>A tracked file: file1.txt has the following content.</text>
+          <mediaList>
+            <media ref="visualDiffTrackedFileContent.html" type="html"/>
+          </mediaList>
+          <text>You change the content by deleting the text with number 1 and 3. Than you push the updated file to the staging area with:</text><text>git add file1.txt</text><text>After that you want to restore the text numbered with 3 using a visual diff with vimdiff considering the pictures below.</text>
+          <mediaList>
+            <media ref="visualDiffTrackedFileStart.png" type="image"/>
+            <media ref="visualDiffTrackedFileSoftLineBreak.png" type="image"/>
+            <media ref="visualDiffTrackedFileTakeAChange.png" type="image"/>
+          </mediaList>
+        </section>
+      </introduction>
+      <title>Read the introduction and order the commands properly</title>
+      <text>Restore the text numbered 3 using vimdiff, considering the pictures from the introduction!</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>git difftool -t vimdiff -- file1.txt</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>:set wrap linebreak nolist</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>Ctrl w + w</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>:set wrap linebreak nolist</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>]c</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>dp</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>w!</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="glossaryWorkingTree" topic="glossary">
@@ -499,4 +540,10 @@
       <title>Basics</title>
     </topic>
   </topicList>
+  <mediaList>
+    <media ref="visualDiffTrackedFileContent.html" type="html" label="Content of file1.txt" showLabelBeforeEvaluated="yes"/>
+    <media ref="visualDiffTrackedFileStart.png" type="image"/>
+    <media ref="visualDiffTrackedFileSoftLineBreak.png" type="image"/>
+    <media ref="visualDiffTrackedFileTakeAChange.png" type="image"/>
+  </mediaList>
 </catalog>
