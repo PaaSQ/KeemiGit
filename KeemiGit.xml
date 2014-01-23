@@ -331,6 +331,7 @@
           <text>You make some modifications to the content of a tracked file: file1.txt. Than you accidentally remove file1.txt using the command:</text><text>git rm file1.txt</text>
         </section>
       </introduction>
+      <title>Read the introduction and answer the question</title>
       <text>Can you restore the file with the modifications you made?</text>
       <answer>
         <answerItem correct="no">
@@ -360,7 +361,7 @@
           <mediaList>
             <media ref="visualDiffTrackedFileContent.html" type="html"/>
           </mediaList>
-          <text>You change the content by deleting the text with number 1 and 3. Than you push the updated file to the staging area with:</text><text>git add file1.txt</text><text>After that you want to restore the text numbered with 3 using a visual diff with vimdiff considering the pictures below.</text>
+          <text>You change the content by deleting the text with number 1 and 3. Than you push the updated file to the staging area with:</text><text>git add file1.txt</text><text>After that you want to restore the text numbered with 3 using vimdiff considering the procedure shown at the pictures below.</text>
           <mediaList>
             <media ref="visualDiffTrackedFileStart.png" type="image"/>
             <media ref="visualDiffTrackedFileSoftLineBreak.png" type="image"/>
@@ -369,18 +370,18 @@
         </section>
       </introduction>
       <title>Read the introduction and order the commands properly</title>
-      <text>Restore the text numbered 3 using vimdiff, considering the pictures from the introduction!</text>
+      <text>Restore the text numbered 3 using vimdiff ( consider the pictures from the introduction )!</text>
       <answer>
         <answerItem correct="yes">
           <text>git difftool -t vimdiff -- file1.txt</text>
         </answerItem>
-        <answerItem correct="yes">
+        <answerItem correct="yes" equalGroupName="softLineBreak">
           <text>:set wrap linebreak nolist</text>
         </answerItem>
         <answerItem correct="yes">
           <text>Ctrl w + w</text>
         </answerItem>
-        <answerItem correct="yes">
+        <answerItem correct="yes" equalGroupName="softLineBreak">
           <text>:set wrap linebreak nolist</text>
         </answerItem>
         <answerItem correct="yes">
@@ -507,7 +508,7 @@
     <explanation name="undoingThings" topic="basics">
       <title>Unmodifying a Modified File</title>
       <section>
-        <text>At any stage, you may want to undo something. To overwrite the modified content of a file in the working tree with the content stored in the staging area use:</text><text>git checkout -- nameOfFile</text><text>Be careful, because you can’t revert the modifications.</text><text>To throw away a version of a file stored in the staging area use:</text><text>git reset HEAD nameOfFile</text><text>This command replaces the content of the file (Blob) to the last committed one referred by HEAD.</text>
+        <text>At any stage, you may want to undo something. To overwrite the modified content of a file in the working tree with the content stored in the staging area use:</text><text>git checkout -- &lt;paths&gt;</text><text>where &lt;paths&gt; is the name of one or more files or directories. Be careful, because you can’t revert the modifications.</text><text>To throw away a modified file stored in the staging area use:</text><text>git reset commit-ID -- &lt;paths&gt;</text><text>This command stores the files (Blob's) referred by commit-ID into the staging area.</text><text>The HEAD is not touched if git checkout is executed with a &lt;paths&gt; separated by -- from the other options.</text>
       </section>
     </explanation>
   </explanationList>
