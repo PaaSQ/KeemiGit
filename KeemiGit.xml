@@ -395,6 +395,23 @@
         </answerItem>
       </answer>
     </question>
+    <question name="createNewBranch" type="singleChoice" topic="branches">
+      <text>What happens if you create a branch named syncFeature with: git branch syncFeature ?</text>
+      <answer>
+        <answerItem correct="yes">
+          <text>A new reference is created, the reference is stored as file .git/refs/heads/syncFeature , the content of the file is the commit-ID the HEAD reference points to.</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>A new commit object is created, the object stores the name of the branch and all modified files from the staging area.</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>All files referred by the branch named syncFeature are stored into the staging area and working tree. If the staging area or working tree contain modified files, the operation is canceled.</text>
+        </answerItem>
+        <answerItem correct="no">
+          <text>All files referred by the branch named syncFeature are stored into working tree. If the working tree contains modified files, the operation is canceled.</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="glossaryWorkingTree" topic="glossary">
@@ -557,6 +574,9 @@
     </topic>
     <topic name="basics">
       <title>Basics</title>
+    </topic>
+    <topic name="branches">
+      <title>Branches</title>
     </topic>
   </topicList>
   <mediaList>
