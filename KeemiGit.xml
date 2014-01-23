@@ -288,8 +288,8 @@
     </question>
     <question type="flashcard" name="discardAllLocalChangesFromFile3" topic="basics"
       groupName="discardAllLocalChangesFromFile">
-      <text>You want to discard all made modifications from file1.txt and update the content to the one in the last commit. Which commands you use?</text>
-      <answer style="row">
+      <text>You want to discard all made modifications from file1.txt and update the content to the one stored in the last commit. Which commands you use?</text>
+      <answer style="row" explanation="undoingThings">
         <answerItem correct="yes">
           <text>git reset HEAD file1.txt</text>
         </answerItem>
@@ -371,7 +371,7 @@
       </introduction>
       <title>Read the introduction and order the commands properly</title>
       <text>Restore the text numbered 3 using vimdiff ( consider the pictures from the introduction )!</text>
-      <answer>
+      <answer explanation="visualDiffTrackedFile">
         <answerItem correct="yes">
           <text>git difftool -t vimdiff -- file1.txt</text>
         </answerItem>
@@ -511,6 +511,19 @@
         <text>At any stage, you may want to undo something. To overwrite the modified content of a file in the working tree with the content stored in the staging area use:</text><text>git checkout -- &lt;paths&gt;</text><text>where &lt;paths&gt; is the name of one or more files or directories. Be careful, because you can’t revert the modifications.</text><text>To throw away a modified file stored in the staging area use:</text><text>git reset commit-ID -- &lt;paths&gt;</text><text>This command stores the files (Blob's) referred by commit-ID into the staging area.</text><text>The HEAD is not touched if git checkout is executed with a &lt;paths&gt; separated by -- from the other options.</text>
       </section>
     </explanation>
+    <explanation name="visualDiffTrackedFile" topic="basics">
+      <title>Using vimdiff</title>
+      <section>
+        <text>If you use vimdiff to compare two versions of a file and transfer the content from one to another keep the following commands / shortcuts in mind:</text>
+        <text>git difftool -t vimdiff -- file1.txt ( Vim is started by git, comparing the content of file1.txt in the working tree with the version stored in the staging are. )</text>
+        <text>:set wrap linebreak nolist ( enables soft line breaks in the current window )</text>
+        <text>]c ( jump to the next change )</text>
+        <text>[c ( jump to the previous change )</text>
+        <text>do ( get changes from other window into the current window )</text>
+        <text>dp ( put the changes from current window into the other window )</text>
+        <text>Ctrl w + w ( switch to the other window )</text>
+      </section>
+    </explanation>
   </explanationList>
   <resourceList>
     <resource name="glossary" type="website">
@@ -532,6 +545,10 @@
     <resource name="diff" type="website">
       <title>Git diff explained</title>
       <link>http://www.gitguys.com/topics/git-diff/</link>
+    </resource>
+    <resource name="vimdiff" type="website">
+      <title>Vim - Word wrap without line breaks</title>
+      <link>http://vim.wikia.com/wiki/Word_wrap_without_line_breaks</link>
     </resource>
   </resourceList>
   <topicList>
