@@ -52,7 +52,7 @@
       </answer>
     </question>
     <question type="flashcard" name="glossaryStagingArea" topic="glossary">
-      <text>You want to add a modified tracked file: file1.txt to the staging area. Which commands can you use?</text>
+      <text>You want to add a modified tracked file: file1.txt to the staging area. How can you do that with the command: add?</text>
       <answer explanation="glossaryStagingArea">
         <answerItem correct="yes">
           <text>git add file1.txt</text>
@@ -413,6 +413,42 @@
         </answerItem>
       </answer>
     </question>
+    <question name="mergeRemoteWithLocalMaster" type="order" topic="managingRemotes">
+      <introduction>
+        <section>
+          <text>The picture below shows the commit graph of a Git repository. Which command sequence built this commit graph?</text>
+          <mediaList>
+            <media ref="mergeRemoteWithLocalMaster.png" type="image"/>
+          </mediaList>
+          <text>The git command:add is ignored in this question.</text>
+        </section>
+      </introduction>
+      <title>Read the introduction and order the commands</title>
+      <text>Which command sequence built the commit graph? Setup the repositories at first, starting with the remote!</text>
+      <answer>
+        <answerItem correct="yes" equalGroupName="init">
+          <text>git init</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git commit -m "Initial commit"</text>
+        </answerItem>
+        <answerItem correct="yes" equalGroupName="init">
+          <text>git init</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git remote add github https://github.com/PaaSQ/KeemiDocumentation.git</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git commit -m "First version of the KEEMI documentation."</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git commit -m "Added .gitignore to ignore the Desktop Services Store(.DS_Store) under Mac OS"</text>
+        </answerItem>
+        <answerItem correct="yes">
+          <text>git pull github master master</text>
+        </answerItem>
+      </answer>
+    </question>
   </questionList>
   <explanationList>
     <explanation name="glossaryWorkingTree" topic="glossary">
@@ -429,7 +465,7 @@
     <explanation name="glossaryStagingArea" topic="glossary">
       <title>Staging Area</title>
       <section>
-        <text>The staging area is a collection of files with status information, whose contents are stored as objects. It is a stored version of your working tree and is a simple file, generally contained in your .git directory.</text><text>The information within the staging area defines what goes into your next commit.</text><text>The staging area is sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area.</text><text>To add new or changed files to the staging area use the commands:</text><question
+        <text>The staging area is a collection of files with status information, whose contents are stored as objects. It is a stored version of your working tree and is a simple file, generally contained in your .git directory.</text><text>The information within the staging area defines what goes into your next commit.</text><text>The staging area is sometimes referred to as the index, but it’s becoming standard to refer to it as the staging area.</text><text>To add new or changed files to the staging area use the command: add as follows:</text><question
           name="glossaryStagingArea"
           /> can be used.<text>The option -u adds all changed files to the staging area, option -A all changed and new added ones.</text>
       </section>
@@ -568,6 +604,10 @@
       <title>Vim - Word wrap without line breaks</title>
       <link>http://vim.wikia.com/wiki/Word_wrap_without_line_breaks</link>
     </resource>
+    <resource name="nonFastForward" type="website">
+      <title>Dealing with non-fast-forward errors</title>
+      <link>https://help.github.com/articles/dealing-with-non-fast-forward-errors</link>
+    </resource>
   </resourceList>
   <topicList>
     <topic name="glossary">
@@ -578,6 +618,9 @@
     </topic>
     <topic name="branches">
       <title>Branches</title>
+    </topic>
+    <topic name="managingRemotes">
+      <title>Managing Remotes</title>
     </topic>
   </topicList>
   <mediaList>
