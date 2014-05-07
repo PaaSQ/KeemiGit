@@ -11,7 +11,7 @@
       <website>www.keemimobile.com</website>
     </publisher>
     <cover>
-      <media ref="Cover.jpeg" type="image"/>
+      <media ref="Cover.jpg" type="image"/>
     </cover>
     <download>https://github.com/PaaSQ/KeemiGit</download>
     <description>Git is a distributed version control system which helps to track a product history over time and to collaborate easily with others. This KEEMI catalog is aimed at developers which use Git in their daily work want to have the essentials in mind.</description>
